@@ -1,0 +1,10 @@
+{
+    "engine_version": "cocos2d-x-3.8.1", 
+    "has_native": true, 
+    "project_type": "js",
+    "mac_cfg": {
+        "project_path": "frameworks/runtime-src/proj.ios_mac",
+        "project_file": "MyJSGame.xcodeproj",
+        "target_name": "MyJSGame-desktop"
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "wow",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ShawnZhang2015 <6346289@qq.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  },
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-ui-router": "~0.2.15"
+  }
+}

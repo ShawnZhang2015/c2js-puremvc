@@ -1,0 +1,71 @@
+{
+  "ID": "51fb264c-572a-4fa4-b75d-6920b7793e37",
+  "Version": "2.3.2.3",
+  "Name": "ContryLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 534,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "WorldMap.tmx",
+              "Plist": ""
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": -176.1832,
+              "Y": 58.7271
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": -0.2753,
+              "Y": 0.0612
+            },
+            "PreSize": {
+              "X": 1.5625,
+              "Y": 0.5208
+            },
+            "LeftMargin": -176.1832,
+            "RightMargin": -183.8168,
+            "TopMargin": 401.2728,
+            "BottomMargin": 58.7271,
+            "Tag": 535,
+            "ActionTag": 1404149486,
+            "Size": {
+              "X": 1000.0,
+              "Y": 500.0
+            },
+            "Name": "Map_1",
+            "ctype": "GameMapObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 960.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "tile_iso_offset.png",
+        "tile_iso_offset.tmx"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}
