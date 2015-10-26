@@ -10,8 +10,17 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
             url: '/index',
-            templateUrl: 'webApp/view/gameView.html',
-            controller: 'GameViewController'
+            views: {
+                "":{
+                    templateUrl: 'webApp/view/home.html'
+                },
+                "gameView@index": {
+                    templateUrl: 'webApp/view/gameView.html'
+                },
+                "tabView@index": {
+                    templateUrl: 'webApp/view/tabView.html'
+                }
+            }
         });
     $urlRouterProvider.otherwise('/index');
 });

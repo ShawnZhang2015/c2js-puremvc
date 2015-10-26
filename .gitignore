@@ -31,3 +31,4 @@ node_modules
 /frameworks/
 /runtime/
 /simulator/
+.idea/

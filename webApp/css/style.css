@@ -1,12 +1,12 @@
 /*#gameView{*/
-    /*height: 640px;*/
-    /*width: 426px;*/
+    /*display:inline-block;*/
+    /*width:auto;*/
+    /*margin: 4px;*/
+    /*position:relative;*/
     /*background: #00b3ee;*/
-    /*margin-right: 4px;*/
-    /*float:left*/
 /*}*/
 
-/*#toolsView{*/
+/*#tabView{*/
     /*height: 640px;*/
     /*width: 400px;*/
     /*float:right*/

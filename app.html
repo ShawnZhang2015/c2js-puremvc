@@ -6,12 +6,20 @@
     <link rel="stylesheet" href="webApp/css/style.css">
     <script src="assets/bower_components/angular/angular.js"></script>
     <script src="assets/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="webApp/app.js"></script>
-
-    <title>mygame</title>
+    <script src="webApp/js/app.js"></script>
+    <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+    <title>MyGame</title>
 </head>
 
 <body>
-    <div ng-view></div>
+    <div ui-view></div>
 </body>
+
+
+<script>
+    //加载游戏代码
+    setTimeout(function() {
+        cc.loader.loadJsWithImg('app-all.js');
+    }, 100);
+</script>
 </html>
