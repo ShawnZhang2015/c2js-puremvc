@@ -47,7 +47,7 @@ var AppFacade = puremvc.define(
             if (instance) {
                 return instance;
             }
-            return instanceMap[multitonKey] = new AppFacade(multitonKey);
+            return global.facade = instanceMap[multitonKey] = new AppFacade(multitonKey);
         },
         NAME: 'AppFacade',
         STARTUP: 'StartUp'
@@ -55,5 +55,3 @@ var AppFacade = puremvc.define(
 );
 
 module.exports = AppFacade;
-
-global.g_app = AppFacade;

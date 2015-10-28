@@ -4,6 +4,7 @@
 var puremvc = require('puremvc').puremvc;
 var CityLayer = require('../component/CityLayer.js');
 
+var RobotFSM = require('../../fsm/RobotFSM.js');
 module.exports = puremvc.define
 (
     // CLASS INFO
@@ -12,6 +13,10 @@ module.exports = puremvc.define
         parent: puremvc.Mediator,
         constructor: function () {
             puremvc.Mediator.call(this, this.constructor.NAME);
+            var robotFSM = new RobotFSM();
+            this.robotFSM = robotFSM.create('robot');
+            this.heroFSM = robotFSM.create('hero');
+
         }
     },
     // INSTANCE MEMBERS
@@ -24,11 +29,17 @@ module.exports = puremvc.define
             }
         },
 
+        getRes: function() {
+            return resManager.loadGroup(resManager.groups.robot);
+        },
+
         /** @override */
         listNotificationInterests: function () {
             return [
                 Messages.ENTER_CITY,
-                Messages.ENTER_COUNTRY
+                Messages.ENTER_COUNTRY,
+                this.robotFSM.CHANGED,
+                this.heroFSM.CHANGED
             ];
         },
 
@@ -43,6 +54,13 @@ module.exports = puremvc.define
                     break;
                 case Messages.ENTER_COUNTRY:
                     this.viewComponent.removeFromParent();
+                    break;
+                case this.robotFSM.CHANGED:
+                    this.viewComponent.playRobotAnimation(notification.getBody().name);
+                    break;
+                case this.heroFSM.CHANGED:
+                    this.viewComponent.playHeroAnimation(notification.getBody().name);
+                    break;
             }
         },
 

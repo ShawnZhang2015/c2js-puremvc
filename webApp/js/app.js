@@ -18,14 +18,18 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'webApp/view/gameView.html'
                 },
                 "tabView@index": {
-                    templateUrl: 'webApp/view/tabView.html'
+                    templateUrl: 'webApp/view/tabView.html',
+                    controller: 'tabController'
                 }
             }
         });
+
     $urlRouterProvider.otherwise('/index');
 });
 
 myApp.controller('GameViewController', function($scope) {
-    $scope.name = 'zxh';
+    $scope.name = 'zxhddd';
 });
+
+
 

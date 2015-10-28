@@ -7,6 +7,8 @@
  */
 var puremvc = require('puremvc').puremvc;
 var GameLayer = require('../component/GameLayer.js');
+//var InjectHeroFSMCommand = require('../../controller/command/InjectHeroFSMCommand.js');
+var _ = require('underscore');
 
 module.exports = puremvc.define
 (
@@ -24,8 +26,14 @@ module.exports = puremvc.define
             this._gameProxy = this.facade.retrieveProxy('GameProxy');
         },
 
+        getRes: function() {
+            return resManager.loadGroup(resManager.groups.MainMenu);
+
+        },
+
         cityLayer: null,
         childMediator: null,
+
         init: function() {
             if (!this.viewComponent) {
                 this.viewComponent = new GameLayer();
@@ -33,6 +41,7 @@ module.exports = puremvc.define
                 this.viewComponent.retain();
 
                 this.viewComponent.switchLayer = this.switchLayer.bind(this);
+                this.viewComponent.playAction = this.playAction.bind(this);
             }
         },
 
@@ -42,6 +51,15 @@ module.exports = puremvc.define
             } else {
                 this.facade.sendNotification(Messages.ENTER_CITY);
             }
+        },
+
+        playAction: function(action) {
+
+            var mediator = this.facade.retrieveMediator('hero');
+            this.sendNotification(mediator.ACTION, null, _.random(1, 3));
+
+            mediator = this.facade.retrieveMediator('robot');
+            this.sendNotification(mediator.ACTION, null, _.random(1, 3));
         },
 
         /** @override */

@@ -39,7 +39,7 @@ module.exports = puremvc.define
                 self.sendNotification(Messages.LOAD_COMPLETE);
 
                 self.asyncData();
-            }, 5000);
+            }, 1000);
         },
 
         asyncData: function() {

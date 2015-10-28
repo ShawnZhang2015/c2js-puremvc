@@ -5,6 +5,7 @@
 require('./resource.js');
 require('./define/Message.js');
 require('./define/Command.js');
+require('./Resources.js');
 
 (function() {
     cc.game.onStart = function(){

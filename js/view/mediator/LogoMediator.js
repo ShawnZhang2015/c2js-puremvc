@@ -27,7 +27,7 @@ module.exports = puremvc.define(
         },
 
         getRes: function() {
-            return G_RES.resources;
+            return resManager.loadGroup(resManager.groups.logo);
         },
 
         /** @override */

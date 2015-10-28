@@ -38,7 +38,10 @@ var res = {
     tile_iso_offset_png: "res/ui/tile_iso_offset.png",
     tile_iso_offset_tmx: "res/ui/tile_iso_offset.tmx",
     iso_png: "res/ui/iso.png",
-    iso_test1_tmx: "res/ui/iso-test1.tmx"
+    iso_test1_tmx: "res/ui/iso-test1.tmx",
+    robot_plist: "res/armature/robot.plist",
+    robot_png: "res/armature/robot.png",
+    robot_xml: "res/armature/robot.xml"
 };
 
 var g_resources = [];

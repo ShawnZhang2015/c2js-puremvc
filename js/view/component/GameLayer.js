@@ -3,8 +3,11 @@
  */
 
 var BaseLayer = require('../widget/BaseLayer.js');
-module.exports = BaseLayer.extend({
+var _ = require('underscore');
+
+var GameLayer = BaseLayer.extend({
     data: null,
+    index: 0,
     ctor: function() {
         this._super();
         this.loadUI(G_RES.res.MainMenu_json);
@@ -17,7 +20,6 @@ module.exports = BaseLayer.extend({
         this._gold.string = "金币:" + data.gold;
     },
 
-
     _onHomeTouchEnded: function() {
         //cc.log("_onHomeTouchEnded");
         if (this.switchLayer) {
@@ -26,8 +28,17 @@ module.exports = BaseLayer.extend({
     },
 
     _onTaskTouchEnded: function() {
-        cc.log("_onTaskTouchEnded");
+        //cc.log("_onTaskTouchEnded");
+        //this.index = _.random(1, 3);
+        this.playAction(this.index);
+
+    },
+
+    _onPvpTouchEnded: function() {
+
     }
 
 
 });
+
+module.exports = GameLayer;

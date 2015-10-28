@@ -31,7 +31,7 @@ module.exports = puremvc.define(
             this.facade.registerMediator(new CountryMediator());
 
             gameMediator.switchLayer();
-        }
+        } ,
     },
 
     // STATIC MEMBERS

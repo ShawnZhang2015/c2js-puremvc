@@ -1,4 +1,10 @@
 <div class="row">
-    <div class="col-lg-4" ui-view="gameView"></div>
-    <div class="col-lg-8" ui-view="tabView"></div>
+    <div class="col-md-4" ui-view="gameView"></div>
+    <div class="col-md-8">
+        <ui class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#index#log">日志</a></li>
+            <li role="presentation"><a href="#config">配置</a></li>
+            <li role="presentation"><a href="#message">消息</a></li>
+        </ui>
+    </div>
 </div>
