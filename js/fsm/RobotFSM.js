@@ -1,42 +1,45 @@
 /**
  * Created by zxh on 15/10/28.
  */
-var puremvc = require('puremvc').puremvc;
 
-
-var RobotFSM = function() {
+var robot = {
+    ACTION_STOP: 1,
+    ACTION_RUN: 2,
+    ACTION_FLOAT: 3
 };
 
-RobotFSM.ACTION_STOP = 1;
-RobotFSM.ACTION_RUN = 2;
-RobotFSM.ACTION_FLOAT = 3;
-
 var fsm = {
-    //开始
+    //action定义
+
+    //初始状态
     "@initial":"stop",
+
+    //状态数组
     "state": [
         {
             "@name":  "stop",
+            "@exiting": Messages.EXIT_STOP,
             "transition": [
                 {
-                    "@action": RobotFSM.ACTION_RUN,
-                    "@target": "oneLegStand"
+                    "@action": robot.ACTION_RUN,
+                    "@target": "run"
                 },
                 {
-                    "@action": RobotFSM.ACTION_FLOAT,
+                    "@action": robot.ACTION_FLOAT,
                     "@target": "float"
                 }
             ]
         },
         {
-            "@name":  "oneLegStand",
+            "@name":  "run",
+            "@entering": Messages.ENTER_RUN,
             "transition": [
                 {
-                    "@action": RobotFSM.ACTION_STOP,
-                    "@target": "pushUp"
+                    "@action": robot.ACTION_STOP,
+                    "@target": "stop"
                 },
                 {
-                    "@action": RobotFSM.ACTION_FLOAT,
+                    "@action": robot.ACTION_FLOAT,
                     "@target": "float"
                 }
             ]
@@ -45,11 +48,11 @@ var fsm = {
             "@name":  "float",
             "transition": [
                 {
-                    "@action": RobotFSM.ACTION_STOP,
+                    "@action": robot.ACTION_STOP,
                     "@target": "stop"
                 },
                 {
-                    "@action": RobotFSM.ACTION_RUN,
+                    "@action": robot.ACTION_RUN,
                     "@target": "run"
                 }
             ]
@@ -57,11 +60,6 @@ var fsm = {
     ]
 };
 
-
-RobotFSM.prototype.create = function(name) {
-    var injector = new puremvc.statemachine.FSMInjector(fsm);
-    injector.initializeNotifier(facade.multitonKey);
-    return injector.inject(name);
+module.exports = function(name) {
+    return FSMHelper.create(fsm, name);
 };
-
-module.exports = RobotFSM;

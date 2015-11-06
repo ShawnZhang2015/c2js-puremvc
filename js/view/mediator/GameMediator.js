@@ -28,7 +28,6 @@ module.exports = puremvc.define
 
         getRes: function() {
             return resManager.loadGroup(resManager.groups.MainMenu);
-
         },
 
         cityLayer: null,
@@ -55,11 +54,12 @@ module.exports = puremvc.define
 
         playAction: function(action) {
 
-            var mediator = this.facade.retrieveMediator('hero');
-            this.sendNotification(mediator.ACTION, null, _.random(1, 3));
+            //var mediator = this.facade.retrieveMediator('hero');
+            var action = FSMHelper.actionMessage('hero');
+            this.sendNotification(action, {name:'hero'}, _.random(1, 3));
 
-            mediator = this.facade.retrieveMediator('robot');
-            this.sendNotification(mediator.ACTION, null, _.random(1, 3));
+            action = FSMHelper.actionMessage('robot');
+            this.sendNotification(action, {name:'robot'}, _.random(1, 3));
         },
 
         /** @override */

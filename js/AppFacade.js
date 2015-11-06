@@ -7,6 +7,7 @@ var puremvc = require('puremvc').puremvc;
 var StartupCommand = require('./controller/command/StartupCommand.js');
 
 var RunGameCommand = require('./controller/command/RunGameCommand.js');
+var WriteLogCommand = require('./controller/command/WriteLogCommand.js');
 
 var AppFacade = puremvc.define(
     // CLASS INFO
@@ -24,6 +25,7 @@ var AppFacade = puremvc.define(
             puremvc.Facade.prototype.initializeController.call(this);
             this.registerCommand(AppFacade.STARTUP, StartupCommand);
             this.registerCommand(Command.RUN_GAME, RunGameCommand);
+            this.registerCommand(Command.WRITE_LOG, WriteLogCommand);
         },
 
         initializeModel: function () {

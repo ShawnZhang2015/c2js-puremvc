@@ -9,7 +9,9 @@ var Messages  = {
     ENTER_CITY: 3,       //进入主城
     GAME_DATA_CHANGE:5,
     ENTER_COUNTRY: 6,     //进入国家
-    LOAD_COMPLETE: 7
+    LOAD_COMPLETE: 7,
+    EXIT_STOP: 8,
+    ENTER_RUN: 9,
 };
 
 

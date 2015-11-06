@@ -4,7 +4,9 @@
 
 var Command = {
     RUN_GAME: 1000,
-    CREATE_HERO_FSM: 1001
+    CREATE_HERO_FSM: 1001,
+    WRITE_LOG: 1002
+
 };
 
 global.Command = Command;
